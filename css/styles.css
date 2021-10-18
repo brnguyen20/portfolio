@@ -293,7 +293,7 @@ about me
 
 .about-me-text {
   color: #7EE2FC;
-  font-family: var(--ff-primary);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   width: 60%;
   height: 60%;
   left: 20%;
