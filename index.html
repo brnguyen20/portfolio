@@ -69,14 +69,13 @@
                   class="card-img-star"
                   src="./images/STAR-logo.png"
                   alt="STAR"
-                  style="width: 275px; height: 275px; padding-top: 5em"
                 />
               </div>
               <div class="flip-card-back">
                 <h1 class="card-heading">STAR Research</h1>
                 <h4 class="card-subheading">June 2021 - Aug. 2021</h4>
                 <p class="card-description">
-                  Through Drexel's STAR Scholars program, I explored various
+                  Through Drexel's STAR Scholars program, I spent my freshman summer exploring various
                   fields within AI, such as deep learning, neural
                   networks, and blind source separation. In addition. I researched a
                   method known as Independent Component Analysis (ICA), which
@@ -95,7 +94,6 @@
                   class="card-img-level-7"
                   src="./images/level-7-v2.png"
                   alt="Level 7 tennis"
-                  style="width: 250px; height: 310px; padding-top: 3em"
                 />
               </div>
               <div class="flip-card-back">
@@ -120,7 +118,7 @@
         <div class="project-card" id="project-card-1">
           <div class="project-card-img">
             <img id="ICA-img" src="./images/ICA.PNG" alt="" />
-            <div class="project-card-text">
+            <div class="ica-project-card-text">
               <div class="project-card-heading">
                 Independent Component Analysis Research
               </div>
@@ -130,7 +128,7 @@
                 WAV file database. Implemented in Python.
                 <div class="project-card-buttons">
                   <button>
-                    <a class="project-card-button" href="">Poster</a>
+                    <a id="poster-button" class="project-card-button" href="">Poster</a>
                   </button>
                 </div>
               </div>
@@ -140,15 +138,15 @@
         <div class="project-card" id="project-card-2">
           <div class="project-card-img">
             <img id="web-dev-img" src="./images/web-dev.png" alt="" />
-            <div class="project-card-text">
+            <div class="web-dev-project-card-text">
               <div class="project-card-heading">Personal Portfolio Website</div>
               <div class="project-card-subheading">Aug. 2021 - Present</div>
               <div class="project-card-description">
                 Personal website developed using HTML & CSS. Future
                 implementations to be made with Bootstrap and JavaScript.
-                <div class="project-card-buttons">
+                <div id="github-project-card-button" class="project-card-buttons">
                   <button>
-                    <a class="project-card-button" href="#">GitHub</a>
+                    <a id="github-button" class="project-card-button" href="#">GitHub</a>
                   </button>
                 </div>
               </div>
@@ -162,28 +160,30 @@
       <div class="section-title"><h2>Contact</h2></div>
       <div class="contact-phrase"><p>Want to get in touch with me? You can send me a message below or find me at my contact links!</p></div>
       </div>
+      <form action="https://formsubmit.co/brnguyen20@gmail.com" method="POST">
       <div class="contact-forms">
         <div class="name-form">
           <label for="#">Name<label>
             <br>
-            <input type="text">
+            <input size="13" type="text" name="name" placeholder="Name" required>
         </div>
         <div class="email-form">
           <label for="#">Email<label>
             <br>
-            <input type="email">
+            <input size="20" type="email" name="email" placeholder="Email Address" required>
         </div>
         <div class="message">
           <label for="#">Message<label>
             <br>
-            <textarea name="#" id="#" cols="30" rows="10"></textarea>
+            <textarea style="font-size: 20px;" name="#" id="#" cols="30" rows="15" placeholder="Your message"></textarea>
         </div>
         <div class="contact-clickables">
           <a href="https://www.linkedin.com/in/brian-nguyen-2002/" target="_blank"><img id="linkedin-icon" src="./images/linkedin.png" alt="linkedin"></a>
           <a href=""><img id="github-icon" src="./images/github.png" alt="github"></a>
         </div>
       </div>
+      <button id="send-button" type="submit">Send</button>
+    </form>
     </div>
-    <div class="divider"></div>
   </body>
 </html>

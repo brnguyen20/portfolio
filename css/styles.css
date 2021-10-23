@@ -26,7 +26,8 @@ html{
   --clr-background: rgb(15, 15, 15);
   --ff-primary: "Raleway", sans-serif;
   --ff-secondary: "Grand Hotel", cursive;
-  --transition-slow: all 0.6s ease-in;
+  --transition-slow: all .8s ease-in;
+  --transition-medium: all 0.6s ease-in;
   --transition-fast: all 0.5s ease-in;
   --spacing: 0.25rem;
   --radius: 0.5rem;
@@ -101,7 +102,7 @@ nav bar
   margin-left: 2em;
   margin-right: 2em;
   border-bottom: 3px solid;
-  transition: var(--transition-slow);
+  transition: var(--transition-medium);
   /* GO TO ROOT AND UNCOMMENT THE TRANSITION VARIABLE */
 }
 
@@ -129,7 +130,6 @@ introduction
 .intro {
   width: 100vw;
   height: 90vh;
-  background-position: 65% 50%;
   background-color:var(--clr-background);
   font-family: "Montserrat", sans-serif;
 }
@@ -283,11 +283,6 @@ about me
   width: 100vw;
   height: 100vh;
   position: relative;
-  /* background-image: url(../images/about-me-background.jpg);
-  background-repeat: no-repeat;
-  background-size:contain; */
-  
-  /* background-image: url(../images/about-me-background.png); */
   background-color: var(--clr-background);
   background-position: 50% 50%;;
 }
@@ -323,24 +318,25 @@ about me
 
 .tv-container{
   position: absolute;
-  top: 27%;
+  top: 25%;
   left: 10%;
+
+  
 }
 
 #tv {
-  width: 52em;
+  width: 48em;
   height: 40em;
 }
 
 #hidden-tv{
-    width: 41.5em;
+    width: 38.5em;
     height: 40em;
     position: absolute;
-    bottom:1.1%;
-    right: 10.2%;
+    left: 10%;
     cursor: pointer;
     opacity: 0;
-    transition: var(--transition-fast);
+    transition: var(--transition-slow);
 }
 
 #play-button{
@@ -350,7 +346,7 @@ about me
   bottom: 7%;
   right: 31.5%;
   cursor: pointer;
-  z-index: 1;
+  z-index: 3;
 }
 
 #play-button:hover .about-me-text{
@@ -363,6 +359,7 @@ about me
 #play-button:hover + #hidden-tv{
   color: rgb(0, 0, 0);
   opacity: 1;
+  z-index: 2;
 }
 
 
@@ -412,6 +409,7 @@ flip cards
   perspective: 1000px;
   position: absolute;
   width: 40%;
+  max-width: 40em;
   height: 40%;
   transition: var(--transition-fast);
 }
@@ -476,10 +474,16 @@ flip cards
 }
 
 .card-img-star {
+  width: 70%;
+  height: 80%;
+  padding-top: 5em;
   animation: zoom-1 5s infinite;
 }
 .card-img-level-7 {
   animation: zoom-2 5s infinite;
+  width: 70%;
+  height: 80%;
+  padding-top: 3em;
 }
 
 @keyframes zoom-1 {
@@ -535,22 +539,21 @@ projects
 
 .projects-cards-background {
   background: var(--clr-background);
-  background-position: 50% 50%;
-  /* background-attachment: fixed; */
   width: 100vw;
   height: 75%;
 }
 
 .project-card {
   position: absolute;
-  width: 50%;
-  height: 75%;
-  top: 10%;
+  width: 25em;
+  height: 25em;
 }
+
+
 
 .project-card-img {
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 10%;
   transition: all 0.5s ease-in-out;
   /* box-shadow: 0px 0px 40px 0px #f7f76f; */
@@ -563,7 +566,22 @@ projects
   border: 2px solid #44f889;
 }
 
-.project-card-text {
+.ica-project-card-text {
+  position: absolute;
+  top: -25%;
+  right: -15%;
+  width: 25em;
+  height: 22em;
+  background: rgb(15,15,15);
+  border-radius: 5px;
+  border: 2px solid #44f889;
+  transition: all 0.5s ease-in-out;
+  color: #44f889;
+  font-family: "Noto Sans Mono", sans-serif;
+  /* box-shadow: 0px 0px 40px 0px #f7f76f; */
+}
+
+.web-dev-project-card-text {
   position: absolute;
   top: -25%;
   right: -15%;
@@ -602,12 +620,17 @@ projects
   margin-top: 1em;
 }
 
+#github-project-card-button{
+  height: 6em;
+  transform: translateY(1.5em);
+}
+
+
 button {
   font-family: "Noto Sans Mono", sans-serif;
   padding: 0.5em 1.5em;
   letter-spacing: 2px;
   border-radius: 10px;
-  margin-bottom: 1.25em;
   font-size: 1em;
 }
 
@@ -656,7 +679,7 @@ contact
 .contact-forms {
   position: absolute;
   width: 100vw;
-  height: 100%;
+  height: 140%;
   top: 40%;
   background: var(--clr-background);
   /* background-image: url(../images/wood-background.png); */
@@ -713,6 +736,10 @@ textarea {
   margin-top: 0.5em;
 }
 
+input{
+font-size: 20px;
+}
+
 .contact-clickables {
   position: relative;
   left: 50%;
@@ -733,4 +760,619 @@ textarea {
   height: 5em;
   top: 16em;
   left: 3.5em;
+}
+
+#send-button{
+  width: 10em;
+  position: absolute;
+  top: 68em;
+  left: 11em;
+  padding: 12px 20px;
+  font-family: var(--ff-primary);
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+
+/* MEDIA QUERIES */
+/* MQ1 */
+ @media only screen and (max-width: 600px) {
+
+  .navbar-links{
+    top: 8%;
+  }
+
+  .navbar-clickable{
+    margin: 0 3em;
+  }
+
+  .photo img {
+    width: 15em;
+    height: 20em;
+    object-fit: cover;
+    box-shadow: 10px 15px 25px 0 rgba(16, 245, 195, 0.466);
+    display: block;
+    transition: all 0.5s linear;
+    margin-top: -10px;
+    border-radius: 30px;
+  }
+
+  #name{
+    position: absolute;
+    transform: translate(-100%, 40%);
+    font-size: 3em;
+  }
+
+  #description {
+    position: absolute;
+    transform: translate(-70%, -150%);
+    color: white;
+  }
+
+  .top-text{
+    visibility: hidden;
+  }
+
+  .bottom-text{
+    visibility: hidden;
+  }
+
+  .section-title{
+    font-size: 1.75em;
+  }
+
+  #tv{
+    width: 30em;
+    height: 25em;
+  }
+
+  #hidden-tv{
+    width: 24em;
+    height: 25em;
+    position: absolute;
+}
+
+#play-button{
+  width: 1.1em;
+  height: 1em;
+  position: absolute;
+  bottom: 7.5%;
+  right: 31%;
+}
+
+
+ .card-heading {
+  margin-top: 1rem;
+  font-size: 1.25em;
+}
+
+.card-subheading {
+  font-size: 0.8em;
+  margin-top: -0.75em;
+}
+
+.card-description {
+  margin: 0 1.25em;
+  font-size: 0.95em;
+  letter-spacing: 0.03em;
+  font-family: "Nunito";
+}
+
+.ica-project-card-text{
+width: 15em;
+height: 17em;
+right: 5%;
+}
+
+.web-dev-project-card-text{
+  width: 15em;
+  height: 17.5em;
+  right: -35%;
+  }
+
+  .project-card {
+    top: 20%;
+  }
+
+.project-card-heading {
+  text-align: center;
+  margin: 1.5em 1em 0 1em;
+  font-size: 0.8em;
+}
+.project-card-subheading {
+  text-align: center;
+  margin: 1em 0;
+  font-size: 0.6em;
+}
+
+.project-card-description {
+  margin: 0 2.5em;
+  margin-bottom: 1em;
+  font-size: 0.8em;
+}
+
+#ICA-img {
+  border-radius: 5px;
+  width: 15em;
+  height: 17em;
+  border: 2px solid #44f889;
+  transform: translateX(-10%);
+}
+
+#web-dev-img {
+  border-radius: 5px;
+  width: 15em;
+  height: 17em;
+  border: 2px solid #44f889;
+  object-fit: cover;
+  transform: translateX(30%);
+}
+
+button{
+  transform: translateY(-10%);
+}
+
+
+}
+
+
+/* MQ2 */
+@media only screen and (min-width: 600px) {
+
+  .navbar-links{
+    top: 15%;
+  }
+
+  .navbar-clickable{
+    margin: 0 3em;
+  }
+
+  .photo img {
+    width: 15em;
+    height: 20em;
+    object-fit: cover;
+    box-shadow: 10px 15px 25px 0 rgba(16, 245, 195, 0.466);
+    display: block;
+    transition: all 0.5s linear;
+    margin-top: -10px;
+    border-radius: 30px;
+  }
+
+  #name{
+    position: absolute;
+    transform: translate(-100%, 40%);
+    font-size: 3em;
+  }
+
+  #description {
+    position: absolute;
+    transform: translate(-70%, -150%);
+    color: white;
+  }
+
+  .top-text{
+    visibility: hidden;
+  }
+
+  .bottom-text{
+    visibility: hidden;
+  }
+
+
+  #tv{
+    width: 38em;
+    height: 35em;
+  }
+
+  #hidden-tv{
+    width: 30.27em;
+    height: 35em;
+    position: absolute;
+}
+
+#play-button{
+  width: 1.15em;
+  height: 1.2em;
+  position: absolute;
+  bottom: 7.5%;
+  right: 31%;
+}
+
+
+ .card-heading {
+  margin-top: 1rem;
+  font-size: 1.25em;
+}
+
+.card-subheading {
+  font-size: 0.8em;
+  margin-top: -0.75em;
+}
+
+.card-description {
+  margin: 0 1.25em;
+  font-size: 1em;
+  letter-spacing: 0.03em;
+  font-family: "Nunito";
+}
+
+.ica-project-card-text{
+width: 19em;
+height: 20em;
+right: 0%;
+}
+
+.web-dev-project-card-text{
+  width: 18em;
+  height: 22em;
+  right: -10%;
+  }
+
+.project-card-heading {
+  text-align: center;
+  margin: 0.5em 1em 0 1em;
+  font-size: 1.1em;
+}
+
+.project-card {
+  position: absolute;
+  width: 25em;
+  height: 25em;
+  top: 25%;
+}
+.project-card-subheading {
+  text-align: center;
+  margin: 1em 0;
+  font-size: 0.8em;
+}
+
+.project-card-description {
+  margin: 0 2.5em;
+  margin-bottom: 1em;
+  font-size: 0.9em;
+}
+
+#ICA-img {
+  border-radius: 5px;
+  width: 18em;
+  height: 20em;
+  border: 2px solid #44f889;
+  transform: translateX(-10%);
+}
+
+#web-dev-img {
+  border-radius: 5px;
+  width: 18em;
+  height: 20em;
+  border: 2px solid #44f889;
+  object-fit: cover;
+  transform: translateX(5%);
+}
+
+
+} 
+
+/* MQ3 */
+@media only screen and (min-width: 768px) {
+
+  .navbar-links{
+    top: 15%;
+  }
+  .navbar-clickable{
+    margin: 0 4em;
+  }
+
+  .photo img {
+    width: 20em;
+    height: 25em;
+    object-fit: cover;
+    box-shadow: 10px 15px 25px 0 rgba(16, 245, 195, 0.466);
+    display: block;
+    transition: all 0.5s linear;
+    margin-top: -10px;
+    border-radius: 30px;
+  }
+
+  #name{
+    position: absolute;
+    transform: translate(-100%, 40%);
+    font-size: 3em;
+  }
+
+  #description {
+    position: absolute;
+    transform: translate(-100%, -300%);
+    color: white;
+  }
+
+  .top-text{
+    top: -5%;
+    visibility: visible;
+  }
+
+  .bottom-text{
+    visibility: visible;
+  }
+
+
+  #hidden-tv{
+    width: 30.27em;
+    height: 35em;
+    position: absolute;
+}
+
+
+ .card-heading {
+  margin-top: 1rem;
+  font-size: 1.5em;
+}
+
+.card-subheading {
+  font-size: 1em;
+  margin-top: -0.5em;
+}
+
+.card-description {
+  margin: 0 1.25em;
+  font-size: 1.19em;
+  letter-spacing: 0.03em;
+  font-family: "Nunito";
+}
+
+.project-card{
+  top: 10%;
+}
+
+#project-card-1{
+  width: 50%;
+  height: 100%;
+}
+
+.ica-project-card-text{
+  width: 24em;
+  height: 22em;
+  max-width: 40em;
+}
+
+#project-card-2{
+  width: 50%;
+  height: 100%;
+}
+
+.web-dev-project-card-text{
+  width: 24em;
+  height: 22em;
+  left: 1%;
+  }
+
+.project-card-heading {
+  text-align: center;
+  margin: 1em 1em 0 1em;
+  font-size: 1.1em;
+}
+.project-card-subheading {
+  text-align: center;
+  margin: 1em 0;
+  font-size: 1em;
+}
+
+.project-card-description {
+  margin: 0 2.5em;
+  margin-bottom: 1em;
+  font-size: 1.05em;
+}
+
+#ICA-img {
+  border-radius: 5px;
+  width: 24em;
+  height: 20em;
+  border: 2px solid #44f889;
+  transform: translateX(-10%);
+}
+
+#web-dev-img {
+  border-radius: 5px;
+  width: 24em;
+  height: 20em;
+  border: 2px solid #44f889;
+  object-fit: cover;
+  transform: translateX(-10%);
+}
+
+
+}  
+
+/* MQ4 */
+@media only screen and (min-width: 992px) {
+
+  .navbar-links{
+    top: 35%;
+  }
+  .navbar-clickable{
+    margin: 0 4em;
+  }
+
+  .photo img {
+    width: 20em;
+    height: 25em;
+    object-fit: cover;
+    box-shadow: 10px 15px 25px 0 rgba(16, 245, 195, 0.466);
+    display: block;
+    transition: all 0.5s linear;
+    margin-top: -10px;
+    border-radius: 30px;
+  }
+
+  .photo img {
+    width: 25em;
+    height: 30em;
+    object-fit: cover;
+    box-shadow: 10px 15px 25px 0 rgba(16, 245, 195, 0.466);
+    display: block;
+    transition: all 0.5s linear;
+    margin-top: -10px;
+    border-radius: 30px;
+  }
+  
+
+  #name {
+    position: absolute;
+    transform: translate(-140%, 250%);
+    margin: 0;
+    line-height: 1.2;
+    color: rgb(255, 255, 255);
+    transition: var(--transition-fast);
+    animation: shake-1 5s;
+    font-size: 3em;
+  }
+  #description {
+    position: absolute;
+    transform: translate(-120%, -900%);
+    color: white;
+    transition: var(--transition-fast);
+    animation: shake-2 5s;
+  }
+  
+  .top-text {
+    position: absolute;
+    top: 15%;
+    left: -130%;
+    font-size: 2em;
+    color: var(--clr-background);
+    transition: var(--transition-fast);
+  }
+  .bottom-text {
+    position: absolute;
+    top: 45%;
+    left: -125%;
+    font-size: 1.25em;
+    color: var(--clr-background);
+    transition: var(--transition-fast);
+  }
+
+
+  #tv{
+    width: 43em;
+    height: 40em;
+  }
+
+   #hidden-tv{
+    width: 34.3em;
+    height: 40em;
+    position: absolute;
+}
+
+#play-button{
+  position: absolute;
+  bottom: 7.5%;
+  right: 31.5%;
+}
+
+
+ .card-heading {
+  margin-top: 1.2rem;
+  font-size: 1.75em;
+}
+
+.card-subheading {
+  font-size: 1em;
+  margin-top: -0.5em;
+}
+
+.card-description {
+  margin: 0 1.25em;
+  font-size: 1.3em;
+  letter-spacing: 0.03em;
+  font-family: "Nunito";
+}
+
+.project-card{
+  top: 10%;
+}
+
+#project-card-1{
+  width: 50%;
+  height: 100%;
+  left: 5%;
+}
+
+
+#project-card-2{
+  width: 50%;
+  height: 100%;
+}
+
+.ica-project-card-text{
+  width: 26em;
+  height: 24em;
+}
+.web-dev-project-card-text{
+  width: 26em;
+  height: 24em;
+  right: 10%;
+  }
+
+.project-card-heading {
+  text-align: center;
+  margin: 1em 1em 0 1em;
+  font-size: 1.3em;
+}
+.project-card-subheading {
+  text-align: center;
+  margin: 1em 0;
+  font-size: 1em;
+}
+
+.project-card-description {
+  margin: 0 2.5em;
+  margin-bottom: 1em;
+  font-size: 1.1em;
+}
+
+#ICA-img {
+  border-radius: 5px;
+  width: 26em;
+  height: 22em;
+  border: 2px solid #44f889;
+  transform: translateX(-10%);
+}
+
+#web-dev-img {
+  border-radius: 5px;
+  width: 26em;
+  height: 22em;
+  border: 2px solid #44f889;
+  object-fit: cover;
+  transform: translateX(-10%);
+} 
+
+
+}
+
+/* MQ for contact forms */
+@media only screen and (max-width: 680px) {
+  #linkedin-icon {
+    position: absolute;
+    transform: translate(50%, 10%)
+    
+  }
+  #github-icon {
+    position: absolute;
+    transform: translate(35%, -100%)
+  }
+  
+}
+
+@media only screen and (min-width: 1100px) {
+
+  #linkedin-icon {
+    height: 8em;
+    width: 8em;
+    
+  }
+
+  #github-icon {
+    height: 8em;
+    width: 11.5em;
+  }
 }
