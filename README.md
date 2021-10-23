@@ -1,1 +1,0 @@
-Hello! This contains the code for my personal website. This website was built using HTML and CSS, though I look to advance it in the future with Bootstrap and JS. In it, you'll find information about me, my experience, projects, and other contact information. Thanks for visiting!
