@@ -291,22 +291,6 @@ about me
   color: #3dc4e6;
 }
 
-.about-me-text {
-  opacity: 0;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  width: 55%;
-  height: 60%;
-  left: 22%;
-  top: -10%;
-  font-size: 1.4em;
-  position: absolute;
-  margin-left: 8%;
-  margin-top: 20%;
-  word-spacing: 2px;
-  letter-spacing: 0.75px;
-  z-index: 5;
-  transition: var(--transition-fast);
-}
 
 #drexel-logo {
   position: absolute;
@@ -349,17 +333,52 @@ about me
   z-index: 3;
 }
 
-#play-button:hover .about-me-text{
-  color: rgb(0, 0, 0);
-  opacity: 1;
-}
-
-
 
 #play-button:hover + #hidden-tv{
   color: rgb(0, 0, 0);
   opacity: 1;
   z-index: 2;
+}
+
+.about-me-side-text{
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-4em);
+}
+ /* typewriter effect adapted from https://www.youtube.com/watch?v=m0o0QNpY9-0  */
+.wrapper{
+  display: inline-flex;
+}
+
+.wrapper .static-text{
+  font-size: 35px;
+}
+
+.wrapper .dynamic-text{
+  font-size: 35px;
+  position: relative;
+  margin-left: 10px;
+}
+
+
+.dynamic-text::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid white;
+  left: 0;
+  animation: typing 2s steps(17) infinite;
+  background:rgb(15, 15, 15)
+}
+
+@keyframes typing {
+  100%{
+    left: 100%;
+    margin: 0 0 0 35px;
+  }
 }
 
 
@@ -620,9 +639,9 @@ projects
   margin-top: 1em;
 }
 
-#github-project-card-button{
+
+#github-project-card-background{
   height: 6em;
-  transform: translateY(1.5em);
 }
 
 
@@ -691,7 +710,9 @@ contact
   font-size: 1.75em;
   top: 9.5em;
   left: 3em;
-  width: 75vw;
+  padding-bottom: 5em; 
+  width: 80%;
+  height: 100%;
 }
 
 .name-form {
@@ -765,8 +786,8 @@ font-size: 20px;
 #send-button{
   width: 10em;
   position: absolute;
-  top: 68em;
-  left: 11em;
+  top: 48em;
+  left: 11.5em;
   padding: 12px 20px;
   font-family: var(--ff-primary);
   cursor: pointer;
@@ -912,9 +933,11 @@ button{
   transform: translateY(-10%);
 }
 
-
+#github-project-card-background{
+  transform: translateY(0em);
 }
 
+ }
 
 /* MQ2 */
 @media only screen and (min-width: 600px) {
@@ -1049,6 +1072,9 @@ right: 0%;
   transform: translateX(5%);
 }
 
+#github-project-card-background{
+  transform: translateY(0.5em);
+}
 
 } 
 
@@ -1346,6 +1372,10 @@ right: 0%;
   transform: translateX(-10%);
 } 
 
+#github-project-card-background{
+  transform: translateY(2em);
+}
+
 
 }
 
@@ -1376,3 +1406,60 @@ right: 0%;
     width: 11.5em;
   }
 }
+
+/* MQ for cards */
+@media only screen and (max-height: 500px) {
+  .card-heading {
+    margin-top: 0.2rem;
+    font-size: 0.75em;
+  }
+  
+  .card-subheading {
+    font-size: 0.5em;
+    margin-top: -1.5em;
+  }
+  
+  .card-description {
+    margin: 0 1.25em;
+    margin-top: -1em;
+    font-size: 0.73em;
+    letter-spacing: 0.03em;
+    font-family: "Nunito";
+  }
+
+  .card-img-star {
+    width: 70%;
+    height: 80%;
+    padding-top: 5em;
+    animation: zoom-1 5s infinite;
+  }
+
+}
+
+/* MQ for dynamic typing animation*/
+@media only screen and (max-width: 615px){
+  .static-text{
+    white-space: nowrap;
+}
+
+.dynamic-text::after{
+  content: "";
+  animation: typing 2s steps(17) infinite;
+  background:rgb(15, 15, 15)
+}
+
+}
+
+/* MQ's for contact-phrase */
+@media only screen and (max-height: 820px){
+  .contact-phrase{
+    transform: translateY(-15%);
+  }
+}
+
+@media only screen and (max-height: 600px){
+  .contact-phrase{
+    transform: translateY(-25%);
+  }
+}
+
