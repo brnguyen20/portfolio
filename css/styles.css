@@ -134,7 +134,8 @@ introduction
   font-family: "Montserrat", sans-serif;
 }
 
-/* ADAPTED FROM https://codepen.io/TiagoLopes/pen/vZBMWB */
+/* <!-- hover effect adapted from Tiago Lopes:
+           https://codepen.io/TiagoLopes/pen/vZBMWB */
 .photo {
   position: absolute;
   top: 50%;
