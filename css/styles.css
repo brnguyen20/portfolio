@@ -371,7 +371,7 @@ about me
   width: 100%;
   border-left: 2px solid white;
   left: 0;
-  animation: typing 2s steps(17) infinite;
+  animation: typing 2.5s steps(20) infinite;
   background:rgb(15, 15, 15)
 }
 
